@@ -1,0 +1,90 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ma page index{% endblock %}
+
+{% block body %}
+
+    <section id="slider" class="slider-element h-auto" style="background-color: #222;">
+        <div class="slider-inner">
+
+            <div class="owl-carousel carousel-widget owl-loaded owl-drag" data-margin="0" data-items="1" data-pagi="false" data-loop="true" data-animate-in="rollIn" data-speed="450" data-animate-out="rollOut" data-autoplay="5000">
+
+                <div class="owl-stage-outer"><div class="owl-stage" style="transform: translate3d(-4749px, 0px, 0px); transition: all 0s ease 0s; width: 12664px;">
+                        <div class="owl-item cloned" style="width: 1583px;">
+                            <a href="#"><img src="images/01.png" alt="Slider"></a>
+                        </div><div class="owl-item cloned" style="width: 1583px;">
+                            <a href="#"><img src="images/slider/full/4.jpg" alt="Slider"></a>
+                        </div>
+                        <div class="owl-item" style="width: 1583px;">
+                            <a href="#"><img src="images/1.jpg" alt="Slider"></a>
+                        </div>
+                        <div class="owl-item active" style="width: 1583px;">
+                            <a href="#"><img src="images/2.jpg" alt="Slider"></a>
+                        </div>
+                        <div class="owl-item" style="width: 1583px;">
+                            <a href="#"><img src="images/3.jpg" alt="Slider"></a>
+                        </div>
+                        <div class="owl-item" style="width: 1583px;">
+                            <a href="#"><img src="images/4.jpg" alt="Slider"></a>
+                        </div>
+                        <div class="owl-item cloned" style="width: 1583px;">
+                            <a href="#"><img src="images/1.jpg" alt="Slider"></a>
+                        </div><div class="owl-item cloned" style="width: 1583px;">
+                            <a href="#"><img src="images/2.jpg" alt="Slider"></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="owl-nav"><button type="button" role="presentation" class="owl-prev"><i class="icon-angle-left"></i></button><button type="button" role="presentation" class="owl-next"><i class="icon-angle-right"></i></button></div><div class="owl-dots disabled"></div></div>
+
+        </div>
+    </section>
+
+    <section id="content">
+        <div class="content-wrap">
+            <div class="container clearfix">
+
+                <!-- Posts
+                ============================================= -->
+                <div id="posts" class="row grid-container gutter-30 has-init-isotope" style="position: relative; height: 4796.07px;">
+
+                    <div class="entry col-12" style="position: absolute; left: 0%; top: 0px;">
+                        <div class="grid-inner">
+                            <div class="entry-image">
+                                <a href="images/9.jpg" data-lightbox="image"><img src="images/9.jpg" alt="Standard Post with Image"></a>
+                            </div>
+                            <div class="entry-title">
+                                <h2><a href="single.php">Titre qui est super bien !</a></h2>
+                            </div>
+                            <div class="entry-meta">
+                                <ul>
+                                    <li><i class="icon-calendar3"></i> 16/07/2020</li>
+                                    <li><a href="#"><i class="icon-user"></i> AnCat</a></li>
+                                    <li><i class="icon-folder-open"></i> <a href="#">Tuto</a>, <a href="#">Divers</a></li>
+                                    <li><a href="blog-single.html#comments"><i class="icon-comments"></i> 13 commentaires</a></li>
+                                    <li><a href="#"><i class="icon-camera-retro"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="entry-content">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, asperiores quod est tenetur in. Eligendi, deserunt, blanditiis est quisquam doloribus voluptate id aperiam ea ipsum magni aut perspiciatis rem voluptatibus officia eos rerum deleniti quae nihil facilis repellat atque vitae voluptatem libero at eveniet veritatis ab facere.</p>
+                                <a href="blog-single.html" class="more-link">Voir plus</a>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </div><!-- #posts end -->
+
+                <!-- Pager
+                ============================================= -->
+                <div class="d-flex justify-content-between mt-5">
+                    <a href="#" class="btn btn-outline-secondary">← Ancien</a>
+                    <a href="#" class="btn btn-outline-dark">Récent →</a>
+                </div>
+                <!-- .pager end -->
+
+            </div>
+        </div>
+    </section>
+
+{% endblock %}
