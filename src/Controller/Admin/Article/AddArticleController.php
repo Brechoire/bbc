@@ -27,6 +27,12 @@ class AddArticleController extends AbstractController
      */
     public function index(Request $request, ArticleService $articleService): Response
     {
+        $submittedToken = $request->get('token');
+
+        if (!$this->isCsrfTokenValid('add_article_admin', $submittedToken)) {
+            return $this->redirectToRoute('home');
+        }
+
         $article = $articleService->addArticle($request);
 
         return $this->render('admin/add_article.html.twig', [

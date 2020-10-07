@@ -1,12 +1,32 @@
-{% extends 'base.html.twig' %}
+{% extends 'admin.html.twig' %}
 {% block title %}Ajout d'un article{% endblock %}
 {% block body %}
 
-    <h1>Ajout d'un article</h1>
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title">Ajouter un article</h3>
 
-    {{ form_start(form) }}
-    {{ form_row(form) }}
-    <button type="submit">Envoyer</button>
-    {{ form_end(form) }}
+            <div class="card-tools">
+                <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
+                    <i class="fas fa-minus"></i></button>
+                <button type="button" class="btn btn-tool" data-card-widget="remove" data-toggle="tooltip" title="Remove">
+                    <i class="fas fa-times"></i></button>
+            </div>
+        </div>
+        <div class="card-body">
+            {{ form_start(form) }}
+            {{ form_row(form) }}
+        </div>
+        <!-- /.card-body -->
+        <div class="card-footer">
+            <button type="submit">Envoyer</button>
+
+        </div>
+        {{ form_end(form) }}
+
+        <!-- /.card-footer-->
+    </div>
+
+
 
 {% endblock %}
