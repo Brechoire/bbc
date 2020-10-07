@@ -116,4 +116,29 @@ class ArticleService
 
         return $form;
     }
+
+    /**
+     * @param Request $request
+     * @param $id
+     * @return FormInterface
+     * @throws RedirectException
+     */
+    public function editArticle(Request $request, $id)
+    {
+        $article = $this->entityManager->getRepository(Article::class)->find($id);
+
+        $form = $this->form->create(ArticleType::class, $article);
+
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()){
+            $this->entityManager->persist($article);
+            $this->entityManager->flush();
+
+            $this->flashBag->add('success', 'Article modifié.');
+            throw new RedirectException($this->router->generate('app_home'));
+        }
+
+        return $form;
+    }
 }

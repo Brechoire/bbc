@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * @ORM\Entity(repositoryClass=ArticleRepository::class)
  */
-class Article
+class Article implements \Serializable
 {
     /**
      * @ORM\Id
@@ -139,5 +139,21 @@ class Article
         $this->user = $user;
 
         return $this;
+    }
+
+    public function serialize()
+    {
+       return serialize([
+           $this->id,
+           $this->user
+       ]);
+    }
+
+    public function unserialize($serialized)
+    {
+        list (
+            $this->id,
+            $this->user
+            ) = unserialize($serialized);
     }
 }
