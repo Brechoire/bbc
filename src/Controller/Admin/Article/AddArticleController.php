@@ -19,7 +19,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class AddArticleController extends AbstractController
 {
     /**
-     * @Route("/ajout-article", name="add_article_admin")
+     * @Route("/ajout-article/{token}", name="add_article_admin")
      * @param Request $request
      * @param ArticleService $articleService
      * @return Response
@@ -28,9 +28,10 @@ class AddArticleController extends AbstractController
     public function index(Request $request, ArticleService $articleService): Response
     {
         $submittedToken = $request->get('token');
+        dump($submittedToken);
 
         if (!$this->isCsrfTokenValid('add_article_admin', $submittedToken)) {
-            return $this->redirectToRoute('home');
+             return $this->redirectToRoute('app_home');
         }
 
         $article = $articleService->addArticle($request);

@@ -52,6 +52,12 @@ class Article implements \Serializable
      */
     private $user;
 
+    public function __construct()
+    {
+        $this->published_at = new \DateTime('now');
+        $this->created_at = new \DateTime('now');
+    }
+
     public function getId(): ?int
     {
         return $this->id;
